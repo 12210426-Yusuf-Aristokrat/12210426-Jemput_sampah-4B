@@ -1,11 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class DashboardView extends StatelessWidget {
   const DashboardView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    var scaffold = Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+  items: [
+    BottomNavigationBarItem(
+      icon: Icon(FontAwesomeIcons.house),
+      label: 'Home'
+    ),
+    BottomNavigationBarItem(
+      icon: Icon(FontAwesomeIcons.newspaper),
+      label: 'Berita'
+    ),
+    BottomNavigationBarItem(
+      icon: Icon(FontAwesomeIcons.gear),
+      label: 'Pengaturan'
+    ),
+  ],
+),
+
       body: Stack(
         children: [
           _BackgroundDashboard(),
@@ -47,6 +65,7 @@ class DashboardView extends StatelessWidget {
         ],
       ),
     );
+    return scaffold;
   }
 }
 

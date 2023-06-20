@@ -42,6 +42,8 @@ dependencies:
   firebase_core: ^1.10.4  # Package inti Firebase
   firebase_auth: ^3.3.4  # Package autentikasi Firebase
   provider: ^6.0.1  # Package state management
+  font_awesome_flutter: ^10.4.0
+  google_fonts: ^4.0.4
 
 
   # The "flutter_lints" package below contains a set of recommended lints to

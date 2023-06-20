@@ -34,11 +34,6 @@ class LoginPage extends StatelessWidget {
               ),
               obscureText: true,
             ),
-                      Image.asset(
-                        "assets/sampah.png",
-                        width: 100,
-                        height: 100,
-                      ),
             const SizedBox(height: 24.0),
             ElevatedButton(
               child: const Text('Sign In'),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:id_ac_bsi_4b_12210426_jemput_sampah/pages/profil_view.dart';
+import 'package:id_ac_bsi_4b_12210426_jemput_sampah/pages/settings_view.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -13,10 +14,10 @@ class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
 
   final List<Widget> _pages = [
-    const HomeScreen(),
+    const HomePage(),
     const MapScreen(),
     const ProfilePage(),
-    const SettingsScreen(),
+    const SettingPage(),
   ];
 
   @override

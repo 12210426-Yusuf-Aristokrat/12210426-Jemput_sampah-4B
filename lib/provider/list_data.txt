@@ -1,0 +1,20 @@
+import 'dart:convert';
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+
+
+class ListData with ChangeNotifier{
+  // 
+
+  Future ambilData() async{
+    final alamat = Uri.parse('masukan alamat api');
+    final head = await http.get(alamat,headers: {
+      'apikey' : 'code api di larvel',
+      'token' :  'token dari laravel',
+      'userid' : 'dari laravel db',
+    });
+    final dt= jsonDecode(r.body);
+    data = dt['data'];
+  }
+
+}

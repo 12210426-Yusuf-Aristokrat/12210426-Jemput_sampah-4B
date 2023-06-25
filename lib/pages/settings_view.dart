@@ -46,105 +46,47 @@ class SettingPage extends StatelessWidget {
 
 //   SettingItem({required this.title, required this.description});
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       width: 365,
-//       height: 77,
-//       decoration: BoxDecoration(
-//         borderRadius: BorderRadius.circular(10),
-//         color: Colors.white,
-//       ),
-//       child: Column(
-//         crossAxisAlignment: CrossAxisAlignment.start,
-//         children: <Widget>[
-//           Padding(
-//             padding: const EdgeInsets.only(left: 15, top: 10),
-//             child: Text(
-//               title,
-//               style: const TextStyle(
-//                 color: Color.fromRGBO(69, 69, 69, 1),
-//                 fontFamily: 'Gudea',
-//                 fontSize: 20,
-//                 letterSpacing: 0,
-//                 fontWeight: FontWeight.normal,
-//                 height: 1,
-//               ),
-//             ),
-//           ),
-//           Padding(
-//             padding: const EdgeInsets.only(left: 15, top: 5),
-//             child: Text(
-//               description,
-//               style: const TextStyle(
-//                 color: Color.fromRGBO(69, 69, 69, 1),
-//                 fontFamily: 'Gudea',
-//                 fontSize: 14,
-//                 letterSpacing: 0,
-//                 fontWeight: FontWeight.normal,
-//                 height: 1,
-//               ),
-//             ),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
-class SettingItem extends StatelessWidget {
-  final String title;
-  final String description;
-
-  SettingItem({required this.title, required this.description});
-
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        // Handle the click event here
-        // You can navigate to a new screen or perform any other action
-        print('Setting item clicked: $title');
-      },
-      child: Container(
-        width: 365,
-        height: 77,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: Colors.white,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(left: 15, top: 10),
-              child: Text(
-                title,
-                style: const TextStyle(
-                  color: Color.fromRGBO(69, 69, 69, 1),
-                  fontFamily: 'Gudea',
-                  fontSize: 20,
-                  letterSpacing: 0,
-                  fontWeight: FontWeight.normal,
-                  height: 1,
-                ),
+    return Container(
+      width: 365,
+      height: 77,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: Colors.white,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(left: 15, top: 10),
+            child: Text(
+              title,
+              style: const TextStyle(
+                color: Color.fromRGBO(69, 69, 69, 1),
+                fontFamily: 'Gudea',
+                fontSize: 20,
+                letterSpacing: 0,
+                fontWeight: FontWeight.normal,
+                height: 1,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 15, top: 5),
-              child: Text(
-                description,
-                style: const TextStyle(
-                  color: Color.fromRGBO(69, 69, 69, 1),
-                  fontFamily: 'Gudea',
-                  fontSize: 14,
-                  letterSpacing: 0,
-                  fontWeight: FontWeight.normal,
-                  height: 1,
-                ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 15, top: 5),
+            child: Text(
+              description,
+              style: const TextStyle(
+                color: Color.fromRGBO(69, 69, 69, 1),
+                fontFamily: 'Gudea',
+                fontSize: 14,
+                letterSpacing: 0,
+                fontWeight: FontWeight.normal,
+                height: 1,
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

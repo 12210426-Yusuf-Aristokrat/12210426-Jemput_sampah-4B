@@ -52,7 +52,7 @@ class ProfilePage extends StatelessWidget {
               onPressed: () {
                 // Implementasi logika untuk tombol Edit Profil
                 //menuju halaman edit profil
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> const EditProfilePage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>  UserDataWidget()));
               },
               child: const Text('Edit Profil'),
             ),

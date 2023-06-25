@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:id_ac_bsi_4b_12210426_jemput_sampah/pages/beranda_view.dart';
-import 'package:id_ac_bsi_4b_12210426_jemput_sampah/pages/map_view.dart';
-import 'package:id_ac_bsi_4b_12210426_jemput_sampah/pages/profil_view.dart';
-import 'package:id_ac_bsi_4b_12210426_jemput_sampah/pages/settings_view.dart';
+import 'package:provider/provider.dart';
+import 'package:id_ac_bsi_4b_12210426_jemput_sampah/provider/map.dart';
 
 class Navbar extends StatefulWidget {
   const Navbar({Key? key}) : super(key: key);
@@ -11,15 +9,14 @@ class Navbar extends StatefulWidget {
   _NavbarState createState() => _NavbarState();
 }
 
-
 class _NavbarState extends State<Navbar> {
   int _currentIndex = 0;
 
   final List<Widget> _pages = [
-     HomePage(),
-    const MapSample(),
-    const ProfilePage(),
-    const SettingPage(),
+    HomePage(),
+    MapPage(),
+    ProfilePage(),
+    SettingPage(),
   ];
 
   @override
@@ -58,46 +55,86 @@ class _NavbarState extends State<Navbar> {
   }
 }
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Home'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Home'),
+      ),
+      body: Center(
+        child: Text('Welcome to the Home Page'),
+      ),
     );
   }
 }
 
-class MapScreen extends StatelessWidget {
-  const MapScreen({super.key});
-
+class MapPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Map'),
+    final mapProvider = Provider.of<MapProvider>(context);
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Map'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                mapProvider.mulai_bacalokasi();
+              },
+              child: Text('Start Reading Location'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                mapProvider.stop_bacalokasi();
+              },
+              child: Text('Stop Reading Location'),
+            ),
+            Consumer<MapProvider>(
+              builder: (context, provider, _) {
+                final selectedLocation = provider.selectedLocation;
+                if (selectedLocation != null) {
+                  return Text('Selected Location: ${selectedLocation.latitude}, ${selectedLocation.longitude}');
+                } else {
+                  return Text('No Location Selected');
+                }
+              },
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
-
+class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Profile'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Profile'),
+      ),
+      body: Center(
+        child: Text('Welcome to the Profile Page'),
+      ),
     );
   }
 }
 
-class SettingsScreen extends StatelessWidget {
-  const SettingsScreen({super.key});
-
+class SettingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Settings'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Settings'),
+      ),
+      body: Center(
+        child: Text('Welcome to the Settings Page'),
+      ),
     );
   }
 }

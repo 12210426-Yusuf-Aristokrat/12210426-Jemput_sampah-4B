@@ -50,7 +50,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 },
               ),
               SizedBox(height: 16.0),
-              RaisedButton(
+              ElevatedButton(
                 child: Text('Atur Ulang Password'),
                 onPressed: _resetPassword,
               ),

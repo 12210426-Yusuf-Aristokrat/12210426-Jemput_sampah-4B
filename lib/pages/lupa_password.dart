@@ -1,4 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
   @override
@@ -10,7 +12,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   final TextEditingController _emailController = TextEditingController();
 
   void _resetPassword() async {
-    if (_formKey.currentState.validate()) {
+    if (_formKey.currentState!.validate()) {
       try {
         await FirebaseAuth.instance.sendPasswordResetEmail(
           email: _emailController.text,
@@ -40,7 +42,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 controller: _emailController,
                 decoration: InputDecoration(labelText: 'Email'),
                 validator: (value) {
-                  if (value.isEmpty) {
+                  if (value!.isEmpty) {
                     return 'Tolong Masukkan Email';
                   }
                   // Add additional email validation if needed

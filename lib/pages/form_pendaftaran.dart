@@ -28,6 +28,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
+
   @override
   void dispose() {
     _nameController.dispose();

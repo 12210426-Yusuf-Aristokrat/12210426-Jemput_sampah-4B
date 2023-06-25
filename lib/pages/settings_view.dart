@@ -16,21 +16,22 @@ class SettingPage extends StatelessWidget {
           color: const Color.fromRGBO(255, 255, 255, 1),
           child: Column(
             children: <Widget>[
-              const ElevatedButton(height: 20),
+              const SizedBox(height: 20),
               SettingItem(
                 title: 'Akun dan Privasi'
               ),
-              const ElevatedButton(height: 20),
+              const SizedBox(height: 20)
               SettingItem(
                 title: 'Notifikasi'
               ),
-              const ElevatedButton(height: 20),
+              const SizedBox(height: 20),
               SettingItem(
-                title: 'Bantuan',
+                title: 'Bantuan'
               ),
-              const ElevatedButton(height: 20),
+              const SizedBox(height: 20),
               SettingItem(
                 title: 'Tentang'
+              ),
               ),
             ],
           ),

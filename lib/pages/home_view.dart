@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:id_ac_bsi_4b_12210426_jemput_sampah/pages/beranda_view.dart';
+import 'package:id_ac_bsi_4b_12210426_jemput_sampah/pages/map_view.dart';
 import 'package:id_ac_bsi_4b_12210426_jemput_sampah/pages/profil_view.dart';
 import 'package:id_ac_bsi_4b_12210426_jemput_sampah/pages/settings_view.dart';
 
@@ -16,7 +17,7 @@ class _NavbarState extends State<Navbar> {
 
   final List<Widget> _pages = [
      HomePage(),
-    const MapScreen(),
+    const MapSample(),
     const ProfilePage(),
     const SettingPage(),
   ];

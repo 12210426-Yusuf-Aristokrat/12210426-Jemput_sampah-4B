@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:id_ac_bsi_4b_12210426_jemput_sampah/pages/beranda_view.dart';
 import 'package:id_ac_bsi_4b_12210426_jemput_sampah/pages/profil_view.dart';
 import 'package:id_ac_bsi_4b_12210426_jemput_sampah/pages/settings_view.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class Navbar extends StatefulWidget {
+  const Navbar({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _NavbarState createState() => _NavbarState();
 }
 
 
-class _HomePageState extends State<HomePage> {
+class _NavbarState extends State<Navbar> {
   int _currentIndex = 0;
 
   final List<Widget> _pages = [
-    const HomePage(),
+     HomePage(),
     const MapScreen(),
     const ProfilePage(),
     const SettingPage(),

@@ -40,7 +40,7 @@ class LoginPage extends StatelessWidget {
               onPressed: () {
                 // Implementasi logika sign in di sini
                 //pindah ke halaman utama
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> Navbar()));
               },
             ),
             TextButton(

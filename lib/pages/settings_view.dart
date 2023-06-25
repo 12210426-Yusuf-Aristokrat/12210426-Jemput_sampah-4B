@@ -18,20 +18,19 @@ class SettingPage extends StatelessWidget {
             children: <Widget>[
               const ElevatedButton(height: 20),
               SettingItem(
-                title: 'Akun dan Privasi',
+                title: 'Akun dan Privasi', description: '',
               ),
               const ElevatedButton(height: 20),
               SettingItem(
-                title: 'Notifikasi',
+                title: 'Notifikasi', description: '',
               ),
               const ElevatedButton(height: 20),
               SettingItem(
-                title: 'Bantuan',
+                title: 'Bantuan', description: '',
               ),
               const ElevatedButton(height: 20),
               SettingItem(
-                title: 'Tentang',
-              ),
+                title: 'Tentang', description: '',
               ),
             ],
           ),

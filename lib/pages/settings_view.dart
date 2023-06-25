@@ -18,20 +18,19 @@ class SettingPage extends StatelessWidget {
             children: <Widget>[
               const SizedBox(height: 20),
               SettingItem(
-                title: 'Akun dan Privasi',
+                title: 'Akun dan Privasi', description: '',
               ),
               const SizedBox(height: 20),
               SettingItem(
-                title: 'Notifikasi',
+                title: 'Notifikasi', description: '',
               ),
               const SizedBox(height: 20),
               SettingItem(
-                title: 'Bantuan',
+                title: 'Bantuan', description: '',
               ),
               const SizedBox(height: 20),
               SettingItem(
-                title: 'Tentang',
-              ),
+                title: 'Tentang', description: '',
               ),
             ],
           ),

@@ -1,127 +1,217 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:id_ac_bsi_4b_12210426_jemput_sampah/pages/beranda_view.dart';
-import 'package:id_ac_bsi_4b_12210426_jemput_sampah/pages/home_view.dart';
 
 class DashboardView extends StatelessWidget {
-  const DashboardView({Key key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    var scaffold = Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.house),
-            label: 'Home'
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.newspaper),
-            label: 'Berita'
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.gear),
-            label: 'Pengaturan'
-          ),
-        ],
-      ),
+    return Scaffold(
+        bottomNavigationBar: NavigatorBawah(),
       body: Stack(
         children: [
-          _BackgroundDashboard(),
-          _InformasiPengguna(),
-          Card(
-            margin: EdgeInsets.fromLTRB(0, 150, 0, 0),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Container(
-              width: double.infinity,
-              child: Padding(
-                padding: const EdgeInsets.all(15.0),
+          Image.asset('assets/background.png'),
+        _InformasiPengguna(),
+        SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 180,),
+            child: Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20)
+                ),
+              ),
+              margin: EdgeInsets.zero,
+              child: Container(
+                width: double.infinity,
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Text(
-                      'Jemput Sampah',
-                      style: TextStyle(
-                        fontSize: 15,
-                      ),
-                    ),
+                    SizedBox(height: 50,),
+
+                    _LabelBerita(), 
                     _ListBerita(),
+
+                    SizedBox(height: 40,),
+
                     Wrap(
                       children: [
-                        _TombolMenu(gambar: 'assets/Icon1.png'),
-                        _TombolMenu(gambar: 'assets/Icon2.png'),
-                        _TombolMenu(gambar: 'assets/Icon3.png'),
-                      ],
+                        _TombolMenu(
+                          image: Image.asset('assets/icon1.png',
+                          width: 60,),
+                        ),
+                        _TombolMenu(
+                          image: Image.asset('assets/icon2.png',
+                          width: 60,),
+                        ),
+                        _TombolMenu(
+                          image: Image.asset('assets/icon3.png',
+                          width: 60,),
+                        ),
+
+                    ],
                     ),
+                    ElevatedButton(
+                      
+                      onPressed: (){
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (bc){
+                            return DashboardView();                         
+                         } )); 
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 40),
+                        child: Text('Login'),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(30)), backgroundColor: Colors.green 
+                        ),
+                     ),
+                                           
+                    
                   ],
                 ),
               ),
             ),
           ),
+        ),
         ],
       ),
     );
-    return scaffold;
   }
-  
-  _InformasiPengguna() {}
-}
-
-class _BackgroundDashboard {
 }
 
 class _TombolMenu extends StatelessWidget {
-  final String gambar;
-
-  const _TombolMenu({required Key key, this.gambar = ''}) : super(key: key);
+  final Image? image;
+  const _TombolMenu({
+    Key? key,
+    this.image    
+  }): super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(13),
+    return Card(
+      elevation: 9,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20)
+      ),
       margin: EdgeInsets.all(8),
-      child: Image.asset(
-        gambar,
-        width: 40,
-      ),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        color: Color.fromARGB(255, 227, 196, 96),
-        boxShadow: [
-          BoxShadow(
-            color: Color.fromARGB(33, 227, 196, 96),
-            blurRadius: 2,
-            spreadRadius: 2,
-            offset: Offset(2, 2),
-          ),
-        ],
-      ),
+      child: Padding(
+        padding: const EdgeInsets.all(18.0),
+        child: Image.asset('assets/icon1.png', width: 60,),
+        ),
+    );
+  }
+}
+
+class _LabelBerita extends StatelessWidget {
+  const _LabelBerita();
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+    padding: const EdgeInsets.only(left: 15),
+      child: Align(
+        alignment: Alignment.centerLeft,
+        child: Text('Berita'),),
     );
   }
 }
 
 class _ListBerita extends StatelessWidget {
-  const _ListBerita({required Key super.key});
+  const _ListBerita();
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      height: 250,
-      child: ListView(
-        scrollDirection: Axis.horizontal,
+    return Container(
+      height: 120,
+      child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(right: 8),
+                child: Image.asset('assets/berita1.png', height: 120,),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 8),
+                child: Image.asset('assets/berita2.png', height: 120,),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 8),
+                child: Image.asset('assets/berita3.png', height: 120,),
+              ),
+            ],
+          ),
+        ),
+      );
+  }
+}
+
+class NavigatorBawah extends StatelessWidget {
+  const NavigatorBawah({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return BottomNavigationBar(
+      items: [
+        BottomNavigationBarItem(
+          icon: Icon(FontAwesomeIcons.house),
+          label: 'Home', 
+          ),
+        BottomNavigationBarItem(
+          icon: Icon(FontAwesomeIcons.newspaper),
+          label: 'Berita', 
+          ),
+          BottomNavigationBarItem(
+            icon:Icon(FontAwesomeIcons.gear), 
+            label: 'Pengaturan'
+            ),
+      ], 
+      );
+  }
+}
+
+class _InformasiPengguna extends StatelessWidget {
+  const _InformasiPengguna();
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(20, 60, 20, 0),
+      child: Row(
         children: [
-          _ItemBerita(assetgambar: 'assets/berita1.png'),
-          _ItemBerita(assetgambar: 'assets/berita2.png'),
-          _ItemBerita(assetgambar: 'assets/berita3.png'),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(50),
+            child: Image.asset('assets/user.png'),
+          
+          ),
+          SizedBox(width: 20,),
+          Expanded(
+            child: Column(
+               mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('Selamat Datang, Yusuf',
+            style: TextStyle(fontSize: 35,
+                fontWeight: FontWeight.bold,
+                color: Colors.white
+        ),
+        ),
+          Text('yusuf234@gmailcom',
+          style: TextStyle(fontSize: 35,
+                fontWeight: FontWeight.bold,
+                color: Colors.white
+        ),
+        ),
+        ],
+        ), 
+        ),
+          Image.asset('assets/edit.png', width: 60,),
         ],
       ),
     );
   }
 }
-

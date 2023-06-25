@@ -49,9 +49,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
             ElevatedButton(
               onPressed: () {
                 // Implementasi logika untuk menyimpan perubahan profil
-                String newName = _nameController.text;
-                String newEmail = _emailController.text;
-                String newAddress = _addressController.text;
 
                 // Lakukan pemrosesan data atau panggil fungsi penyimpanan profil
                 // ...

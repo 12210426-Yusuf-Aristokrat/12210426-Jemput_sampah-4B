@@ -53,31 +53,6 @@ class MapView extends StatelessWidget {
             ],
             mapController: mapProvider.mapController,
           ),
-          Positioned(
-            top: MediaQuery.of(context).size.height / 2 -
-                20, // Menyesuaikan ikon di tengah vertikal
-            left: MediaQuery.of(context).size.width / 2 -
-                20, // Menyesuaikan ikon di tengah horizontal
-            child: Icon(
-              Icons.location_on,
-              color: Colors.blue,
-              size: 40,
-            ),
-          ),
-          Positioned(
-            bottom: 10,
-            left: (MediaQuery.of(context).size.width / 2) - 30,
-            child: ElevatedButton(
-              child: Text('Pilih'),
-              onPressed: () {
-                final selectedLocation = mapProvider.selectedLocation;
-                if (selectedLocation != null) {
-                  onLocationSelected(selectedLocation);
-                }
-                Navigator.pop(context);
-              },
-            ),
-          )
         ],
       ),
     );

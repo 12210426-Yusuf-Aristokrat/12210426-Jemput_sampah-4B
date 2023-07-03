@@ -40,11 +40,11 @@ class SettingPage extends StatelessWidget {
   }
 }
 
-class SettingItem extends StatelessWidget {
-  final String title;
-  final String description;
+// class SettingItem extends StatelessWidget {
+//   final String title;
+//   final String description;
 
-  SettingItem({required this.title, required this.description});
+//   SettingItem({required this.title, required this.description});
 
   @override
   Widget build(BuildContext context) {
